@@ -1,0 +1,106 @@
+<!-- <app-navbar></app-navbar> -->
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 col-xl-7 mx-auto">
+        <h1>Insurance Application</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-xl-6 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <!-- <div class="card-img-left d-none d-md-flex"> -->
+          <!-- Background image for card set in CSS! -->
+        </div>
+        <div class="card-body">
+          <hr>
+          <h5 class="card-title text-center">Register</h5>
+          <form class="form-signin" #regForm="ngForm" (submit)="addUser()">
+            <div class="form-label-group">
+              <div>
+                <label for="Name">Name</label>
+              </div>
+              <div>
+                <input type="text" id="name" name="name" class="form-control"
+                pattern = "[a-zA-Z][a-zA-Z ]{3,}"
+                placeholder="Username" required 
+                [(ngModel)]="user.name" 
+                #Name="ngModel" />
+                <!-- <small *ngIf="Name.dirty && .errors?.required" class="small text-danger">
+                         Name is mandatory
+                        </small> -->
+              </div>
+              <small *ngIf=" Name.errors?.pattern" class="small text-danger">
+                Name should not contain number and length should be greater then 3
+              </small>
+            </div>
+
+            <div class="form-label-group">
+              <div>
+                <label for="mobile">Mobile Number</label>
+              </div>
+              <div>
+                <input type="text" id="mobile" name="mobile" class="form-control" placeholder="mobile Number"
+                  pattern="[7-9]{1}[0-9]{9}" required [(ngModel)]="user.mobile" #mobileNumber="ngModel">
+                <!-- <small>
+                       Mobile Number is mandatory
+                        </small> -->
+                <small *ngIf=" mobileNumber.errors?.pattern" class="small text-danger">
+                  Enter valid Mobile Number
+                </small>
+              </div>
+            </div>
+
+            <div class="form-label-group">
+              <div>
+                <label for="email">Email</label>
+              </div>
+              <div>
+                <input type="email" id="email" name=email class="form-control"
+                pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                [class.is-invalid]="email.invalid && email.touched "
+                 placeholder="Email"
+                  required
+                  [(ngModel)]="user.email" #email="ngModel" />
+              </div>
+              <div *ngIf="email.invalid && email.touched">
+                <small class="text-danger" *ngIf="email.errors?.required">Email is required</small>
+                <small class="text-danger" *ngIf="email.errors?.pattern">Email must be in required format</small>
+              </div>
+            </div>
+
+            <div class="form-label-group">
+              <div>
+                <label for="inputConfirmPassword">password</label>
+              </div>
+              <div>
+                <input type="password" id="password"
+                pattern = "[a-zA-Z]{3,}"
+                name=password 
+                class="form-control" placeholder="Password"
+                required
+                  [(ngModel)]="user.password" #password="ngModel" />
+              </div>
+              <div *ngIf="password.invalid && password.touched">
+                <small class="text-danger" *ngIf="password.errors?.required">Password is required</small>
+                <small class="text-danger" *ngIf="password.errors?.pattern">Password must be in required format</small>
+              </div>
+
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block text-uppercase"
+             [disabled]="!regForm.valid"
+              type="submit">Register</button>
+            {{successMsg}}
+            <a class="d-block text-center mt-2 small" [routerLink]="['/user-login']">Sign In</a>
+            <hr class="my-4">
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,92 @@
+
+<!-- <app-navbar></app-navbar><hr> -->
+<body>
+    <div class="container">
+        <div class="row">
+        <div class="col-lg-7 col-xl-7 mx-auto">
+        <h1>Create Policy</h1>
+    </div>
+        </div>
+        </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-xl-6 mx-auto">
+            <div class="card card-signin flex-row my-5">
+              <!-- <div class="card-img-left d-none d-md-flex"> -->
+                 <!-- Background image for card set in CSS! -->
+              </div>
+              <div class="card-body">
+                <!-- <h5 class="card-title text-center">Create Policy</h5> -->
+                <form class="form-signin" #regForm="ngForm" (submit)="createPolicy()">
+                  <div class="form-label-group">
+                    <!-- <div>
+                      <label for="Name">Policy Id</label></div>
+                      <div>
+                      <input type="text" id="planId" name="planId" 
+                       class="form-control" 
+                       placeholder="planId" 
+                       required
+                       [(ngModel)]="policy.planId"
+                       #planId="ngModel"/>
+                        </div> -->
+                  
+                    <div>
+                    <label for="Name">Name</label></div>
+                    <div>
+                    <input type="text" id="name" name="name" 
+                     class="form-control" 
+                     placeholder="name" 
+                     required
+                     [(ngModel)]="policy.name"
+                     #Name="ngModel"/>
+                      </div>
+                  </div>
+  
+                  <div class="form-label-group"><div>
+                    <label for="cost">Cost</label></div>
+                  <div>
+                    <input type="text" id="mobile" name="mobile" 
+                    class="form-control" 
+                    placeholder="cost" 
+                     required
+                     [(ngModel)]="policy.cost"
+                     #cost="ngModel"/>
+                            </div>
+                            </div>
+                 
+                  <div class="form-label-group"><div>
+                    <label for="details">Details</label></div>
+                  <div>
+                    <input type="text" id="details" name="details" class="form-control"
+                     placeholder="details" 
+                     required
+                     [(ngModel)]="policy.details"
+                     #details="ngModel"/>
+                  </div>
+                  </div>
+
+                  <div class="form-label-group"><div>
+                    <label for="deductible">deductible </label></div>
+                  <div>
+                    <input type="text" id="deductible" name="deductible" class="form-control"
+                     placeholder="deductible amount" 
+                     required
+                     [(ngModel)]="policy.deductible"
+                     #deductible="ngModel"/>
+                  </div>
+                  </div>
+                  <hr>
+                  <button class="btn btn-info text-uppercase" [disabled]="!regForm.valid" type="submit">Create</button>&nbsp;&nbsp;
+                  <!-- <button class="btn btn-info  text-uppercase" [disabled]="!regForm.valid" [routerLink]="['/home']">Home</button> -->
+                  {{successMsg}}
+                  <div>
+                  <a class="d-block text-center mt-2 small"  [routerLink]="['/list-policy']">list-policy </a>
+                  <hr class="my-4"></div>
+                
+                </form>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>

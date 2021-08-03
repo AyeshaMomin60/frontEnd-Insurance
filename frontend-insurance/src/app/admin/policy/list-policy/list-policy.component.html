@@ -1,0 +1,40 @@
+
+<div class="mx-5 mt-4">
+  <!-- <div class="w-25"> -->
+    <!-- <div *ngIf="params.enrolled" class="alert alert-danger">
+      Already enrolled in a plan.
+    </div> -->
+  <!-- </div> -->
+
+  <div class="col-xs-12 col-sm-6 col-md-12 form-outline">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText"
+     autocomplete="off" placeholder="Search Policy here">
+  </div>
+
+  <h1>Plans</h1>
+    <div *ngFor="let policy of (allPolicy | filter:searchText)" class="container">
+        <table class="table table-dark">
+      <th>{{policy.name }}</th>
+      <tr><b>Plan Id:</b>{{policy.planId}}</tr>
+      <tr><b>Cost: </b>{{ policy.cost | currency: "IND" }}</tr>
+      <tr><b>Details:</b>{{policy.details}}</tr>
+      <tr><b>Deductible: </b> {{ policy.deductible | currency: "IND" }}</tr>
+      <hr>
+      <tr>
+       <button class="btn btn-info  text-uppercase"  [routerLink]="['/edit-policy',policy.planId]">Update</button>&nbsp;
+      <button class="btn btn-info  text-uppercase"  (click)="deletePolicy(policy.planId)">Delete</button>&nbsp;    
+      <button class="btn btn-info  text-uppercase" [routerLink]="['/show-user-details',policy.planId] ">View User Details</button>&nbsp;
+      <b> <button class="btn btn-info  text-uppercase" (click)="addPolicy(policy.planId)">Enroll into Plan</button></b>
+     
+      </tr>
+    </table>           
+    </div>
+    
+    <button class="btn btn-info  text-uppercase" [routerLink]="['/create-policy']">Create Policy</button>
+    &nbsp;&nbsp;
+   
+    
+    <div></div>
+    <hr>
+  </div>
+  

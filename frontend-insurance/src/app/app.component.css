@@ -1,0 +1,12 @@
+/* #img{
+    background-size:cover;
+    width:auto;
+    background-image:url("/assets/images/bg-image.jpg");
+} */
+
+     #img{
+        height: 1000 px;  
+	    background-image: url("/assets/images/1.jpg");  
+	    background-size:100%;  
+	      
+    }

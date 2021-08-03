@@ -1,0 +1,43 @@
+
+
+<div>
+  <!-- <h1 class="h1"><marque>Welcome to Insurance Policy Application</marque></h1> -->
+
+<h1 class="h1"> Welcome to Insurance Policy Application</h1> 
+</div>
+<div>
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" ><b> Insurance Application</b></a>
+  <!-- <ul *ngIf="(authService.isUserLoggedIn() && authService.getUserName()=='Ayesha')" class="navbar-nav ml-auto">
+    <li  class="nav-item active">
+      <a class="nav-link btn btn-primary" routerLink="view-all-user">User Details</a>
+    </li>
+  </ul> -->
+  <ul *ngIf="!authService.isUserLoggedIn()" class="navbar-nav ml-auto">
+    <li class="nav-item active">
+      <a class="nav-link btn btn-primary" routerLink="user-login">User Login</a>
+    </li>
+  </ul>
+  
+  <ul *ngIf="authService.isUserLoggedIn()" class="navbar-nav ml-auto">
+    <li  class="nav-item active" 
+    *ngIf="(authService.getUserName()=='Ayesha')">
+      <a class="nav-link btn btn-primary"
+      routerLink="view-all-user">User Details</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link btn btn-primary">Welcome {{userName}}</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link btn btn-primary" (click)="logout()"> Logout </a>
+    </li>
+  </ul>
+ 
+
+
+</nav>
+
+</header>
+</div>
+<body ></body>

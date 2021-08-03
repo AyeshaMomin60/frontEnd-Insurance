@@ -1,0 +1,28 @@
+
+
+<div class="mx-5 mt-4">
+    <!-- <div class="w-25"> -->
+      <!-- <div *ngIf="params.enrolled" class="alert alert-danger">
+        Already enrolled in a plan.
+      </div> -->
+    <!-- </div> -->
+  
+    <div class="col-xs-12 col-sm-6 col-md-12 form-outline">
+      
+  
+    <h1>User Details</h1>
+    <button class="btn btn-info  text-uppercase"  [routerLink]="['/list-policy']">Policy</button>
+    <hr/>  
+    <div *ngFor="let user of AllUserDetails " class="container">
+          <table class="table table-dark">
+        <th>{{user.name }}</th>
+        <tr><b>user ID</b> &nbsp;{{user.userId}}</tr>
+        <tr><b>Email</b>&nbsp; {{ user.email}}</tr>
+        <tr><b>mobile</b>&nbsp; {{user.mobile}}</tr>
+        <tr><b>Role </b> &nbsp;{{ user.role }}</tr>
+        <tr><b>Status</b>&nbsp; {{ user.status }}</tr>
+      </table> 
+               
+      </div>
+    
+    

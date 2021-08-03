@@ -1,0 +1,13 @@
+<!-- <p>view-enroll-policy works!</p> -->
+
+<div *ngFor="let p of (allPolicy) | keyvalue">
+    <table class="table" id="myTable">   
+        <tr>&nbsp;&nbsp;
+            <b>{{p.key}}</b> - {{p.value | json}}
+        </tr>
+  
+</table>
+</div>
+&nbsp;
+<button class="btn btn-info  text-uppercase" [routerLink]="['/user-list-policy']">Policies</button>
+

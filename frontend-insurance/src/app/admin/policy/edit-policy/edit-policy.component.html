@@ -1,0 +1,69 @@
+<!-- <app-navbar></app-navbar> -->
+<hr>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 col-xl-7 mx-auto">
+        <h1>Update Policy</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-xl-6 mx-auto">
+        <div class="card-body">
+          <!-- <h5 class="card-title text-center">Update Policy</h5> -->
+
+          <hr>
+          <form  [formGroup]="policyForm" (submit)="update()">
+            <div class="form-label-group">
+                        <div><label for="Name">Policy Name</label></div>
+                      <div>
+                      <input
+                       type="text" id="name" name="name" 
+                       class="form-control" 
+                       formControlName="name" 
+                       />
+                        </div>
+
+
+            </div>
+
+            <div class="form-label-group">
+              <div>
+                <label for="cost">Cost</label>
+              </div>
+              <div>
+                <input type="text" id="cost" name="mobile" class="form-control"
+                formControlName="cost" 
+                placeholder="cost" required
+                 />
+              </div>
+            </div>
+
+            <div class="form-label-group">
+              <div>
+                <label for="deductible">Deductable Amount</label>
+              </div>
+              <div>
+                <input type="text" id="deductible" name="deductible" class="form-control"
+                formControlName="deductible" 
+                  placeholder="deductible amount" />
+              </div>
+            </div>
+            <hr>
+            <button class="btn btn-info text-uppercase" type="submit">Update</button>
+            <!-- <button class="btn btn-info  text-uppercase" [routerLink]="['/home']">Home</button> -->
+            <!-- {{successMsg}} -->
+            <div>
+              <a class="d-block text-center mt-2 small" [routerLink]="['/list-policy']">list-policy </a>
+              <hr class="my-4">
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
